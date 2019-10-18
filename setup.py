@@ -262,7 +262,7 @@ def parse_setuppy_commands():
     # below and not standalone.  Hence they're not added to good_commands.
     good_commands = ('develop', 'sdist', 'build', 'build_ext', 'build_py',
                      'build_clib', 'build_scripts', 'bdist_wheel', 'bdist_rpm',
-                     'bdist_wininst', 'bdist_msi', 'bdist_mpkg')
+                     'bdist_wininst', 'bdist_msi', 'bdist_mpkg', 'bdist')
 
     for command in good_commands:
         if command in args:
@@ -337,7 +337,7 @@ def parse_setuppy_commands():
         flake8="`setup.py flake8` is not supported, use flake8 standalone",
         )
     bad_commands['nosetests'] = bad_commands['test']
-    for command in ('upload_docs', 'easy_install', 'bdist', 'bdist_dumb',
+    for command in ('upload_docs', 'easy_install',
                      'register', 'check', 'install_data', 'install_headers',
                      'install_lib', 'install_scripts', ):
         bad_commands[command] = "`setup.py %s` is not supported" % command
